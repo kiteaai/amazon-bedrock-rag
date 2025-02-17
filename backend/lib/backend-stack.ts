@@ -203,7 +203,35 @@ export class BackendStack extends Stack {
       })
     );
 
-    const whitelistedIps = [Stack.of(this).node.tryGetContext("allowedip")];
+    /*"[Stack.of(this).node.tryGetContext("allowedip")]"
+    wraps the context value inside another array ([allowedip]),
+    causing a nested array issue when passing it to AWS WAF.
+    This leads to the error:
+      Error reason: The parameter contains formatting that is not valid., field: IP_ADDRESS
+    */
+    // const whitelistedIps = [Stack.of(this).node.tryGetContext("allowedip")];
+
+    // Retrieve allowed IPs from context correctly
+    let whitelistedIps: any = this.node.tryGetContext("allowedip")
+    // Ensure `allowedip` is a proper array
+    if (!Array.isArray(whitelistedIps)) {
+        try {
+            whitelistedIps = JSON.parse(whitelistedIps);
+        } catch (e) {
+            console.error("Invalid format received for allowedip:", whitelistedIps);
+            throw new Error("allowedip must be an array of CIDR strings.");
+        }
+    }
+
+    // Ensure IPs are in valid CIDR format
+    whitelistedIps = whitelistedIps.filter((ip: string) => ip.match(/^(\d{1,3}\.){3}\d{1,3}\/32$/));
+
+    // If the list is empty, throw an error
+    if (whitelistedIps.length === 0) {
+        throw new Error("No valid /32 CIDR IPs provided. AWS WAF requires /32 format.");
+    }
+
+    console.log("Final Allowed IPs (WAF /32 only):", whitelistedIps);
 
     const apiGateway = new apigw.RestApi(this, "rag", {
       description: "API for RAG",

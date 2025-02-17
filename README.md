@@ -29,7 +29,9 @@ Add new websites for web datasource
 - From the backend folder, run "npm install" to install all dependencies. Use "npm audit" to check for known vulnerabilites on the dependent packages.
 - Use CDK to deploy the backend to AWS. For example,
 ```
-cdk deploy --context allowedip="xxx.xxx.xxx.xxx/32"
+cdk deploy --context allowedip='["xxx.xxx.xxx.xxx/32"]'
+Example: cdk deploy --context allowedip='["129.237.0.1/32", "99.184.64.184/32"]'
+
 ```
 Provide an client IP address that is allowed to access the API Gateway in CIDR format as part of the 'allowedip' context variable. 
 
