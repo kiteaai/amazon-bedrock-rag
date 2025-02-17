@@ -80,7 +80,7 @@ const App = (props) => {
           {
             question: question,
             response: data.response,
-            citation: data.citation,
+            //citation: data.citation,
           },
         ]);
       })
