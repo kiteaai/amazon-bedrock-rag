@@ -108,17 +108,24 @@ export const modelList = [
     responseStreamingSupported: true,
   },
   {
-    customizationsSupported: [],
-    guardrailsSupported: false,
-    inferenceTypesSupported: ["ON_DEMAND"],
-    inputModalities: ["TEXT"],
-    modelArn: "arn:aws:bedrock:us-east-1::foundation-model/meta.llama-3",
-    modelId: "meta.llama-3",
-    modelLifecycle: { status: "ACTIVE" },
-    modelName: "Meta Llama 3",
-    outputModalities: ["TEXT"],
-    providerName: "Meta",
-    responseStreamingSupported: true,
+    "modelArn": "arn:aws:bedrock:us-east-1::foundation-model/meta.llama3-3-70b-instruct-v1:0",
+    "modelId": "meta.llama3-3-70b-instruct-v1:0",
+    "modelName": "Llama 3.3 70B Instruct",
+    "providerName": "Meta",
+    "inputModalities": [
+        "TEXT"
+    ],
+    "outputModalities": [
+        "TEXT"
+    ],
+    "responseStreamingSupported": true,
+    "customizationsSupported": [],
+    "inferenceTypesSupported": [
+        "INFERENCE_PROFILE"
+    ],
+    "modelLifecycle": {
+        "status": "ACTIVE"
+    }
   },
   {
     customizationsSupported: [],

@@ -1,0 +1,3 @@
+-- example : cdk deploy --context allowedip="99.184.64.184/32"
+cdk bootstrap
+cdk deploy --context allowedip='["129.237.0.0/32", "99.184.64.184/32"]'
