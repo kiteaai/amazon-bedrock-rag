@@ -101,7 +101,7 @@ const UrlSourcesForm = (props) => {
 
   return (
     <div>
-      <Accordion>
+      {/*<Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
@@ -234,7 +234,7 @@ const UrlSourcesForm = (props) => {
             your current data source is not in sync mode
           </Alert>
         )}
-      </Snackbar>
+      </Snackbar>*/}
     </div>
   );
 };

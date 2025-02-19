@@ -153,7 +153,7 @@ const App = (props) => {
         }}
       >
         <Typography variant="h5" sx={{ textAlign: "center" }}>
-          AWS Q&A
+          ATS RFP Chatbot
         </Typography>
         <br></br>
         <br></br>

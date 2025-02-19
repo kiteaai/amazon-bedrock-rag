@@ -20,19 +20,6 @@ export const modelList = [
     guardrailsSupported: true,
     inferenceTypesSupported: ["ON_DEMAND"],
     inputModalities: ["TEXT"],
-    modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v3",
-    modelId: "anthropic.claude-v3",
-    modelLifecycle: { status: "ACTIVE" },
-    modelName: "Claude v3",
-    outputModalities: ["TEXT"],
-    providerName: "Anthropic",
-    responseStreamingSupported: true,
-  },
-  {
-    customizationsSupported: [],
-    guardrailsSupported: true,
-    inferenceTypesSupported: ["ON_DEMAND"],
-    inputModalities: ["TEXT"],
     modelArn:
       "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2:1",
     modelId: "anthropic.claude-v2:1",
@@ -49,28 +36,10 @@ export const modelList = [
     guardrailsSupported: true,
     inferenceTypesSupported: ["ON_DEMAND"],
     inputModalities: ["TEXT"],
-    modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2",
-    modelId: "anthropic.claude-v2",
-    modelLifecycle: {
-      status: "ACTIVE",
-    },
-    modelName: "Claude",
-    outputModalities: ["TEXT"],
-    providerName: "Anthropic",
-    responseStreamingSupported: true,
-  },
-  {
-    customizationsSupported: [],
-    guardrailsSupported: true,
-    inferenceTypesSupported: ["ON_DEMAND"],
-    inputModalities: ["TEXT", "IMAGE"],
-    modelArn:
-      "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0",
+    modelArn: "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0",
     modelId: "anthropic.claude-3-sonnet-20240229-v1:0",
-    modelLifecycle: {
-      status: "ACTIVE",
-    },
-    modelName: "Claude 3 Sonnet",
+    modelLifecycle: { status: "ACTIVE" },
+    modelName: "Claude v3",
     outputModalities: ["TEXT"],
     providerName: "Anthropic",
     responseStreamingSupported: true,
@@ -92,25 +61,9 @@ export const modelList = [
     responseStreamingSupported: true,
   },
   {
-    customizationsSupported: [],
-    guardrailsSupported: true,
-    inferenceTypesSupported: ["ON_DEMAND"],
-    inputModalities: ["TEXT"],
-    modelArn:
-      "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-instant-v1",
-    modelId: "anthropic.claude-instant-v1",
-    modelLifecycle: {
-      status: "ACTIVE",
-    },
-    modelName: "Claude Instant",
-    outputModalities: ["TEXT"],
-    providerName: "Anthropic",
-    responseStreamingSupported: true,
-  },
-  {
-    "modelArn": "arn:aws:bedrock:us-east-1::foundation-model/meta.llama3-3-70b-instruct-v1:0",
-    "modelId": "meta.llama3-3-70b-instruct-v1:0",
-    "modelName": "Llama 3.3 70B Instruct",
+    "modelArn": "arn:aws:bedrock:us-east-1::foundation-model/meta.llama3-8b-instruct-v1:0",
+    "modelId": "meta.llama3-8b-instruct-v1:0",
+    "modelName": "Llama 3 8B Instruct",
     "providerName": "Meta",
     "inputModalities": [
         "TEXT"
@@ -121,23 +74,30 @@ export const modelList = [
     "responseStreamingSupported": true,
     "customizationsSupported": [],
     "inferenceTypesSupported": [
-        "INFERENCE_PROFILE"
+        "ON_DEMAND"
     ],
     "modelLifecycle": {
         "status": "ACTIVE"
     }
   },
   {
-    customizationsSupported: [],
-    guardrailsSupported: true,
-    inferenceTypesSupported: ["ON_DEMAND"],
-    inputModalities: ["TEXT"],
-    modelArn: "arn:aws:bedrock:us-east-1::foundation-model/cohere.command-r-plus",
-    modelId: "cohere.command-r-plus",
-    modelLifecycle: { status: "ACTIVE" },
-    modelName: "Cohere Command R+",
-    outputModalities: ["TEXT"],
-    providerName: "Cohere",
-    responseStreamingSupported: true,
-  },  
+    "modelArn": "arn:aws:bedrock:us-east-1::foundation-model/cohere.command-r-plus-v1:0",
+    "modelId": "cohere.command-r-plus-v1:0",
+    "modelName": "Command R+",
+    "providerName": "Cohere",
+    "inputModalities": [
+        "TEXT"
+    ],
+    "outputModalities": [
+        "TEXT"
+    ],
+    "responseStreamingSupported": true,
+    "customizationsSupported": [],
+    "inferenceTypesSupported": [
+        "ON_DEMAND"
+    ],
+    "modelLifecycle": {
+        "status": "ACTIVE"
+    }
+  }
 ];
